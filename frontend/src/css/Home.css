@@ -1,0 +1,133 @@
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #f6f4f4;
+}
+
+.home-header {
+  margin-bottom: 40px;
+}
+
+.home-header h1 {
+  font-size: 3.5rem;
+  color: #032b57;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.home-header p {
+  font-size: 1.5rem;
+  color: #032b57;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #e74c3c;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #c0392b;
+}
+
+.home-description {
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.home-description h2 {
+  font-size: 2.5rem;
+  color: #032b57;
+  margin-bottom: 20px;
+}
+
+.home-description p {
+  font-size: 1.3rem;
+  color: #032b57;
+  line-height: 1.8;
+  padding: 0 20px;
+}
+
+.home-features {
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.home-features h2 {
+  font-size: 2.5rem;
+  color: #032b57;
+  margin-bottom: 20px;
+}
+
+.home-features .home-ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.home-features li {
+  font-size: 1.2rem;
+  color: #302a11;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.home-footer {
+  margin-top: 50px;
+  color: #8c8d8d;
+  font-size: 1rem;
+}
+
+.home-button {
+  background-color: #016470;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+@media (max-width: 768px) {
+  .home-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-header p {
+    font-size: 1.2rem;
+  }
+
+  .home-description h2,
+  .home-features h2 {
+    font-size: 2rem;
+  }
+
+  .home-description p,
+  .home-features li {
+    font-size: 1.1rem;
+  }
+
+  .home-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}

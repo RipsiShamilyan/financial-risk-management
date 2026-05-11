@@ -1,0 +1,82 @@
+/* src/css/Register.css */
+.register-container {
+  max-width: 400px; /* Ապահովում է լավ կենտրոնացում */
+  height: 425px;
+  margin: 5% auto;
+  padding: 20px; /* Նորմալ padding */
+  border-radius: 8px; /* Շրջանակի աստիճան */
+  background: #f0f0f0; /* Բնական ֆոն */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Հրաշալի ստվեր */
+  text-align: center; /* Կենտրոնացված տեքստ */
+  
+}
+
+.register-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px; /* Թույլատրելի չափ */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.input-group {
+  margin-bottom: 15px; /* Խուսափեք խառնաշփոթից */
+  text-align: left; /* Կողմնորոշեք տեքստը */
+}
+
+.input-group label {
+  font-weight: bold; /* Վառեցրեք */
+  margin-bottom: 5px; /* Փոքր ներքին հեռավորություն */
+}
+
+.input-group input {
+  width: 95%; /* Գտնվելով ամբողջ լայնությամբ */
+  padding: 10px; /* Նորմալ ներքին հեռավորություն */
+  border: 1px solid #ccc; /* Պարզ շագանակագույն շրջանակ */
+  border-radius: 4px; /* Շրջանակի աստիճան */
+  transition: border-color 0.3s; /* Անիմացիա */
+}
+
+.input-group input:focus {
+  border-color: #6a11cb; /* Մեկ այլ գույն */
+  outline: none; /* Արդյունքում */
+}
+
+.register-container button {
+  padding: 12px; /* Նորմալ ներքին հեռավորություն */
+  background-color: rgb(3, 111, 3); /* Գեղեցիկ գույն */
+  color: white; /* Թույլատրելի */
+  border: none; /* Փոքր որոշում */
+  border-radius: 4px; /* Շրջանակի աստիճան */
+  cursor: pointer; /* Ուղղություն */
+  width: 100%; /* Վերաբերում ենք մուտք */
+  font-size: 16px; /* Ընթերցողական */
+  transition: background-color 0.3s; /* Անիմացիա */
+}
+
+.register-container button:hover {
+  background-color: #156254; /* Փոփոխություն */
+}
+
+.error {
+  color: #ff0000; /* Կարմիր գույն */
+  text-align: center; /* Կենտրոնացրեք */
+  margin-bottom: 15px; /* Փոքր ներքին հեռավորություն */
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .register-container {
+    padding: 15px; /* Փոքրացումը */
+    margin: 10% auto;
+    width: 90%; /* Պարամետր */
+  }
+}

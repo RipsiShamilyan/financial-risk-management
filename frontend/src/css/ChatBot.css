@@ -1,0 +1,206 @@
+/* General Container */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Chatbot Box */
+.chatbot-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content:space-evenly; /* Հաղորդագրությունները միշտ ներքևում պահելու համար */
+    transition: all 0.3s ease;
+}
+
+/* Scrollable Messages */
+.messages {
+    max-height: 280px;
+    overflow-y: auto;
+    margin-bottom: 0; /* Հեռացնում ենք դատարկ տարածությունը */
+    padding-bottom: 5px; /* Փոքր բարձունք հաղորդագրությունների համար */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+/* User Message Styling */
+.messages .user {
+    text-align: right;
+    background-color: #d1f7c4;
+    padding: 0px 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    max-width: 80%;
+    align-self: flex-end;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3sease;
+}
+
+/* Bot Message Styling */
+.messages .bot {
+    text-align: left;
+    background-color: #e0e0e0;
+    padding: 6px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    max-width: 75%;
+    align-self: flex-start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3sease;
+}
+
+/* Input Area */
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-box input {
+    width: 300px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+.input-box button {
+    width: 40px;
+    background-color: #174b19;
+    color: white;
+    border: none;
+    position: fixed;
+    padding: 5px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+    transition: all 0.3sease;
+    right: 70px;
+    bottom: 87px;
+}
+
+.input-box button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Chatbot Toggle Button */
+.chatbot-toggle {
+    background-color: #042005;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 88px;
+    right: 25px;
+    border-radius: 10px;
+    z-index: 9999;
+    font-size: 14px;
+    transition: background-color 0.3sease, transform 0.3sease;
+}
+
+.chatbot-toggle:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Typing Indicator */
+.messages .bot.isTyping {
+    font-style: italic;
+    color: #999;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Typing Animation */
+.typing-indicator {
+    font-size: 20px;
+    color: #4CAF50;
+    display: flex;
+    align-items: center;
+}
+
+.typing-indicator span {
+    animation: typing 1.5s infinite;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes typing {
+    0% { content: ""; }
+    33% { content: "."; }
+    66% { content: ".."; }
+    100% { content: "..."; }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .chatbot-box {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .input-box {
+        flex-direction: column;
+    }
+
+    .input-box input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .input-box button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .chatbot-toggle {
+        padding: 10px 16px;
+        font-size: 16px;
+    }
+
+    .messages .user, .messages .bot {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .chatbot-box {
+        max-width: 90%;
+    }
+}

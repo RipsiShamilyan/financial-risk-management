@@ -1,0 +1,210 @@
+/* Salary Calculator container */
+.salary-calculator {
+    background-color: #ffffff;
+    color: #333;
+    padding: 35px 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+}
+
+.salary-calculator:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+h2.title {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 92%;
+}
+
+select {
+    width: 100%;
+}
+
+/* Input and select styling */
+input,
+select {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #4caf50;
+}
+
+/* Button styling */
+button.calculate-buttons {
+    width: 100%;
+    padding: 15px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button.calculate-buttons:hover {
+    background-color: #388e3c;
+}
+
+.error {
+    color: #e53935;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.results {
+    margin-top: 25px;
+    text-align: left;
+    font-size: 18px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.results h3 {
+    font-size: 22px;
+    color: #4caf50;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.results p {
+    margin-bottom: 18px;
+    font-size: 16px;
+    color: #555;
+}
+
+.results p strong {
+    color: #333;
+    font-weight: bold;
+}
+
+.results p span {
+    font-weight: normal;
+    color: #777;
+}
+
+/* Add icons for the labels */
+.results p:before {
+    content: "✔️ ";
+    margin-right: 10px;
+    color: #4caf50;
+    font-size: 20px;
+}
+
+/* Make the entire paragraph clickable */
+.results p {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.results p:hover {
+    transform: translateX(5px);
+}
+
+/* Salary History section */
+.salary-history {
+    margin-top: 40px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.salary-history li {
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.salary-history li:nth-child(even) {
+    background: #f1f1f1;
+}
+
+.salary-history li:hover {
+    background-color: #f0f0f0;
+}
+
+.reverse-calc {
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .salary-calculator {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    h2.title {
+        font-size: 24px;
+    }
+
+    input,
+    select,
+    button.calculate-buttons {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .results p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .results h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2.title {
+        font-size: 20px;
+    }
+
+    input,
+    select,
+    button.calculate-buttons {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .results p {
+        font-size: 14px;
+    }
+
+    .salary-history li {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,160 @@
+/* RiskAssessment.css */
+  .risk-assessment-container {
+    background-color: #fff;
+    padding: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .risk-assessment-header {
+    font-size: 32px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .question-header {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #444;
+  }
+  
+  .radio-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .radio-label {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .radio-input {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .radio-input:checked {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+  }
+  
+  .submit-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  .risk-level-display {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .risk-level {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .risk-level.high {
+    color: #f44336;
+  }
+  
+  .risk-level.medium {
+    color: #ff9800;
+  }
+  
+  .risk-level.low {
+    color: #4caf50;
+  }
+  
+
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .risk-assessment-container {
+      padding: 20px;
+    }
+  
+    .risk-assessment-header {
+      font-size: 28px;
+    }
+  
+    .question-header {
+      font-size: 16px;
+    }
+  
+    .radio-group {
+      margin-bottom: 15px;
+    }
+  
+    .radio-label {
+      font-size: 14px;
+    }
+  
+    .submit-button {
+      font-size: 16px;
+      padding: 12px;
+    }
+  
+    .risk-level-display {
+      font-size: 18px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .risk-assessment-container {
+      padding: 15px;
+    }
+  
+    .risk-assessment-header {
+      font-size: 24px;
+    }
+  
+    .question-header {
+      font-size: 14px;
+    }
+  
+    .radio-group {
+      margin-bottom: 12px;
+    }
+  
+    .radio-label {
+      font-size: 12px;
+    }
+  
+    .submit-button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .risk-level-display {
+      font-size: 16px;
+    }
+  }
+  
