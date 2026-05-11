@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import '../css/RiskAssessment.css';
+import API_URL from '../config';
 
 const RiskAssessment = () => {
   const [totalScore, setTotalScore] = useState(0);
@@ -14,7 +15,7 @@ const RiskAssessment = () => {
     const calculatedScore = Number(data.income) + Number(data.savings) + Number(data.debt) + Number(data.emergencyFund);
     
     try {
-      const response = await fetch("http://localhost:5000/risk-assessment/submit", {
+      const response = await fetch(`${API_URL}/risk-assessment/submit`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user_id: userId, total_score: calculatedScore }),

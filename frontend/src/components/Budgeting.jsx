@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import '../css/Budgeting.css';
 import axios from 'axios';
+import API_URL from '../config';
 
 const Budgeting = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -14,7 +15,7 @@ const Budgeting = () => {
     useEffect(() => {
         const fetchBudgetHistory = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/budgeting/${userId}`);
+                const response = await axios.get(`${API_URL}/budgeting/${userId}`);
                 setBudgetHistory(response.data);
             } catch (error) {
                 console.error('Error fetching budget history:', error);
@@ -38,7 +39,7 @@ const Budgeting = () => {
         };
         
         try {
-            await axios.put(`http://localhost:5000/budgeting/${budgetHistory[editIndex].id}`, {
+            await axios.put(`${API_URL}/budgeting/${budgetHistory[editIndex].id}`, {
                 income: editData.income,
                 expenses: editData.expenses,
                 budget: updatedHistory[editIndex].budget,
@@ -53,7 +54,7 @@ const Budgeting = () => {
 
     const deleteBudget = async (index) => {
         try {
-            await axios.delete(`http://localhost:5000/budgeting/${budgetHistory[index].id}`);
+            await axios.delete(`${API_URL}/budgeting/${budgetHistory[index].id}`);
             const updatedHistory = budgetHistory.filter((_, i) => i !== index);
             setBudgetHistory(updatedHistory);
         } catch (error) {
@@ -66,7 +67,7 @@ const Budgeting = () => {
         setBudget(totalBudget);
     
         try {
-            const response = await fetch('http://localhost:5000/budgeting', {
+            const response = await fetch(`${API_URL}/budgeting`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

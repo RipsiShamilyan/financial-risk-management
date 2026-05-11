@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import '../css/Profile.css';
+import API_URL from '../config';
 
 const Profile = () => {
   const { register, handleSubmit, formState: { errors }, setValue, reset, watch } = useForm();
@@ -17,7 +18,7 @@ const Profile = () => {
     const userId = localStorage.getItem("userId");
     if (userId) {
       axios
-        .get(`http://localhost:5000/profile/${userId}`)
+        .get(`${API_URL}/profile/${userId}`)
         .then((response) => {
           setUserData(response.data);
           setValue("username", response.data.username);
@@ -38,7 +39,7 @@ const Profile = () => {
     }
 
     axios
-      .put(`http://localhost:5000/profile/${userId}`, {
+      .put(`${API_URL}/profile/${userId}`, {
         username: data.username,
         email: data.email,
         password: data.newPassword,

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import '../css/SalaryCalculator.css';
+import API_URL from '../config';
+
 
 const SalaryCalculator = () => {
   const [currency, setCurrency] = useState('AMD');
@@ -29,7 +31,7 @@ const SalaryCalculator = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/calculate-salary', {
+      const response = await axios.post(`${API_URL}/calculate-salary`, {
         grossSalary: parseFloat(grossSalary),
         currency,
         userId
@@ -48,7 +50,7 @@ const SalaryCalculator = () => {
 
   const fetchSalaryHistory = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/salary-history/${userId}`);
+      const response = await axios.get(`${API_URL}/salary-history/${userId}`);
       setSalaryHistory(response.data);
     } catch (error) {
       console.error('Չհաջողվեց բեռնել պատմությունը');

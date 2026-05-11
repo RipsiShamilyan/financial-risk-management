@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import "../css/LoanCalculator.css";
+import API_URL from '../config';
 
 const LoanCalculator = ({ userId }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -10,7 +11,7 @@ const LoanCalculator = ({ userId }) => {
 
   const calculateLoan = async (data) => {
     try {
-      const response = await axios.post("http://localhost:5000/calculate-loan", {
+      const response = await axios.post(`${API_URL}/calculate-loan`, {
         user_id: userId,
         loan_amount: data.loanAmount,
         loan_term: data.loanTerm,

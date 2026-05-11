@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import '../css/Login.css';
 import { useNavigate } from 'react-router-dom';
+import API_URL from '../config';
 
 const Login = ({ onLogin }) => { // Ստեղծում ենք onLogin պրոֆիլը
   const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ const Login = ({ onLogin }) => { // Ստեղծում ենք onLogin պրոֆիլ
     e.preventDefault();
   
     try {
-      const response = await fetch('http://localhost:5000/login', {
+      const response = await fetch(`${API_URL}/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

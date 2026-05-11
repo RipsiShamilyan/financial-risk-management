@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../css/Register.css';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import API_URL from '../config';
 
 const Register = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -14,7 +15,7 @@ const Register = () => {
     const { email, username, password } = data;
 
     try {
-      const response = await fetch('http://localhost:5000/register', {
+      const response = await fetch(`${API_URL}/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
