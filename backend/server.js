@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
@@ -6,20 +7,22 @@ const multer = require('multer');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
 
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(cors({ origin: "http://localhost:3000" }));
+// app.use(cors({ origin: "http://localhost:3000" }));
+
 
 // MySQL Connection
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'financial_risk_management' // ձեր տվյալների բազայի անունը
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  port: process.env.MYSQLPORT
 });
 
 db.connect((err) => {
