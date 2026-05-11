@@ -231,7 +231,7 @@ app.post('/calculate-salary', async (req, res) => {
 
   
   // Աշխատավարձի պահպանում MySQL-ում
-  const sql = `INSERT INTO salaries (user_id, gross_salary, net_salary, income_tax, social_tax, stamp_tax, currency) 
+  const sql = `INSERT INTO salary_calculations (user_id, gross_salary, net_salary, income_tax, social_tax, stamp_tax, currency) 
                VALUES (?, ?, ?, ?, ?, ?, ?)`;
   db.query(sql, [userId, grossSalary, netSalary, incomeTax, socialTax, stampTax, currency], (err, result) => {
     if (err) {
@@ -244,7 +244,7 @@ app.post('/calculate-salary', async (req, res) => {
 
 app.get('/salary-history/:userId', (req, res) => {
   const { userId } = req.params;
-  db.query('SELECT * FROM salaries WHERE user_id = ?', [userId], (err, results) => {
+  db.query('SELECT * FROM salary_calculations WHERE user_id = ?', [userId], (err, results) => {
     if (err) {
       
       return res.status(500).json({ error: 'Տվյալների բեռման սխալ' });
